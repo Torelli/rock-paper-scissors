@@ -5,17 +5,15 @@ let userChoice = prompt(`Choose between "rock", "paper" or "scissor"`);
 // Declaring a variable for the computer choice with a random choice between 'rock, paper or scissor'
 
 let computerChoice = () => {
-    let choice = (Math.floor(Math.random() * 10));
-    if (choice >= 7 ) {
-        return 'rock' // range of 7-9
-    } else if(choice >= 4) {
-        return 'paper'; //range of 4-6
-    } else if (choice != 0) {
-        return 'scissor'; // range of 1-3
-    } else {
-         return computerChoice(); // if choice == 0 the function is called again (the range should be 1-9)
-    }
+    let choice = (Math.floor(Math.random() * 3));
+    console.log(choice);
+     return (choice === 0 ) ? 'rock'
+    : choice === 1 ? 'paper'
+    : 'scissor'
+
 };
+
+console.log(computerChoice());
 
 // Create a function to test which one wins the game
 
