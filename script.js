@@ -1,4 +1,4 @@
-// Declaring a variable for and assigning an arrow function to validate user input
+// Declaring a variable and assigning an arrow function to validate user input
 
 let userChoice = () => {
     let choice = prompt(`Choose between "rock", "paper" or "scissor"`).trim().toLowerCase();
