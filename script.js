@@ -1,19 +1,22 @@
-// Declaring a variable for the user input
+// Declaring a variable for and assigning an arrow function to validate user input
 
-let userChoice = prompt(`Choose between "rock", "paper" or "scissor"`);
+let userChoice = () => {
+    let choice = prompt(`Choose between "rock", "paper" or "scissor"`).trim().toLowerCase();
+    while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissor') {
+        choice = prompt(`${choice} is not a valid answer. Try again!`).trim().toLowerCase();
+    }
+    return choice;
+}
 
-// Declaring a variable for the computer choice with a random choice between 'rock, paper or scissor'
+// Declaring a variable for the computer choice and assigning a random choice between 'rock, paper or scissor'
 
 let computerChoice = () => {
     let choice = (Math.floor(Math.random() * 3));
-    console.log(choice);
      return (choice === 0 ) ? 'rock'
     : choice === 1 ? 'paper'
     : 'scissor'
 
 };
-
-console.log(computerChoice());
 
 // Create a function to test which one wins the game
 
@@ -29,5 +32,5 @@ function getWinner(computerChoice, userChoice) {
 
 // Display the result
 
-alert(getWinner(computerChoice(), userChoice));
+alert(getWinner(computerChoice(), userChoice()));
 
