@@ -1,6 +1,6 @@
 // Declaring a variable and assigning an arrow function to validate user input
 
-let userChoice = () => {
+let getUserChoice = () => {
     let choice = prompt(`Choose between "rock", "paper" or "scissor"`).trim().toLowerCase();
     while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissor') {
         choice = prompt(`${choice} is not a valid answer. Try again!`).trim().toLowerCase();
@@ -10,7 +10,7 @@ let userChoice = () => {
 
 // Declaring a variable for the computer choice and assigning a random choice between 'rock, paper or scissor'
 
-let computerChoice = () => {
+let getComputerChoice = () => {
     let choice = (Math.floor(Math.random() * 3));
      return (choice === 0 ) ? 'rock'
     : choice === 1 ? 'paper'
