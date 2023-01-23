@@ -1,6 +1,13 @@
-// Declaring a variable and assigning an arrow function to validate user input
+// Declaring a variable to get the final score
 
-let getUserChoice = () => {
+const score = {
+    'computer' : 0,
+    'player' : 0
+}
+
+// Declaring a variable and assigning an arrow function to validate player input
+
+let getPlayerChoice = () => {
     let choice = prompt(`Choose between "rock", "paper" or "scissor"`).trim().toLowerCase();
     while (choice !== 'rock' && choice !== 'paper' && choice !== 'scissor') {
         choice = prompt(`${choice} is not a valid answer. Try again!`).trim().toLowerCase();
@@ -20,17 +27,32 @@ let getComputerChoice = () => {
 
 // Create a function to test which one wins the game
 
-function getWinner(computerChoice, userChoice) {
-    if(computerChoice === userChoice) {
+function playRound(computerChoice, PlayerChoice) {
+    if(computerChoice === PlayerChoice) {
         return `It's a tie! both chose ${computerChoice}`;
-    } else if (computerChoice === 'rock' && userChoice === 'paper' || computerChoice === 'paper' && userChoice === 'scissor' || computerChoice === 'scissor' && userChoice === 'rock') {
+    } else if (computerChoice === 'rock' && PlayerChoice === 'paper' || computerChoice === 'paper' && PlayerChoice === 'scissor' || computerChoice === 'scissor' && PlayerChoice === 'rock') {
+        score.player++;
         return `Computer chose ${computerChoice}. You Win!`;
     } else {
+        score.computer++;
         return `Computer chose ${computerChoice}. You lose :(`
     }
 }
 
-// Display the result
+// Play 5 rounds and display the final score
 
-alert(getWinner(computerChoice(), userChoice()));
+function game() {
+    for(let i = 0; i < 5; i++) {
+        alert(`Round ${i+1} \n ${playRound(getComputerChoice(), getPlayerChoice())}`);
+    }
+    if(score.computer === score.player) {
+        alert(`It's a tie. Both computer and player won ${score.computer} rounds out of five.`);
+    }
+    else if(score.computer > score.player) {
+        alert(`You loose. Computer won ${score.computer} rounds out of 5.`);
+    } else {
+        alert(`Congratulations! You won ${score.player} rounds out of 5.`);
+    }
+}
 
+game();
