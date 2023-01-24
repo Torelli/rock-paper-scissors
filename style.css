@@ -1,0 +1,82 @@
+:root:not([data-theme=dark]), [data-theme=light] {
+    --primary: rgb(229, 55, 52);
+    --primary-hover: rgb(158, 43, 41);
+}
+
+:root:not([data-theme=light]), [data-theme=dark] {
+    --primary: rgb(229, 55, 52);
+    --primary-hover: rgb(250, 60, 70);
+  }
+
+h1 {
+    font-size: larger;
+}
+
+p {
+    font-size: small;
+}
+
+hgroup {
+    margin-bottom: 0;
+}
+
+hgroup>:last-child {
+    font-size: small;
+}
+
+main.container-fluid > h2 {
+    text-align: center;
+}
+
+body>nav {
+    box-shadow:0 1px 0 rgba(115, 130, 140, 0.2);
+}
+
+body>main {
+padding-top: 30px;
+}
+
+#btn-container {
+    text-align: center;
+}
+
+.fa-hand-scissors {
+    transform: rotate(90deg);
+}
+
+.fa-regular {
+    font-size: xx-large;
+}
+
+.game-container {
+    margin: 0 auto 20px auto;
+    width: 30vw;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+}
+
+@media screen and (max-width: 576px) {
+    .option-container {
+        width: 100%;
+    }
+}
+
+.home {
+    margin-bottom: 20px;
+}
+
+.option {
+    margin: 0;
+}
+
+.nav ul > li{
+    padding: 0.5rem;
+}
+
+#theme-btn {
+    cursor: pointer;
+    text-decoration: none;
+}

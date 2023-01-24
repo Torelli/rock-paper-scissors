@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <script src="https://kit.fontawesome.com/eb34185c6d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
-    <script src="./script.js"></script>
+    <nav class="container-fluid nav">
+        <ul>
+            <li>
+                <hgroup>    
+                    <h1>Rock-Paper-Scissors</h1>
+                    <h2>By <a href="https://github.com/Torelli" target=”_blank” alt="Check out my GitHub!" data-tooltip="Check out my GitHub!" data-placement="bottom">Giovanni Torelli</a></h2>
+                </hgroup>
+            </li>
+        </ul>
+        <ul>
+            <li><a class="contrast" id="theme-btn" data-tooltip="Turn off dark mode" data-placement="left"><i class="fa-solid fa-circle-half-stroke"></i></a></li>
+        </ul>
+    </nav>
+    <main class="container-fluid">
+        <div class="game-container">
+            <article class="option"><i class="fa-regular fa-hand-back-fist"></i></i></article>
+            <article class="option"><i class="fa-regular fa-hand"></i></article>
+            <article class="option"><i class="fa-regular fa-hand-scissors"></i></article>
+        </div>
+        <h2 class="home">Test your luck against the computer!</h2>
+        <div id="btn-container">
+            <a href="#" id="btn-start" role="button">Start game</a>
+        </div>
+    </main>
 </body>
 </html>
