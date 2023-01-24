@@ -1,5 +1,28 @@
 const html = document.querySelector("html");
 const themeButton = document.querySelector("#theme-btn");
+const btnStart = document.querySelector("#btn-start");
+const rockCard = document.querySelector("#rock");
+const paperCard = document.querySelector("#paper");
+const scissorCard = document.querySelector("#scissor");
+const optionContainer = document.querySelector(".option-container");
+const scoreContainer = document.querySelector(".score-container");
+const homePage = document.querySelector("#home");
+
+btnStart.addEventListener('click', () => {
+    rockCard.setAttribute('style','animation: option-start 0.35s ease-in forwards; ');
+    paperCard.setAttribute('style','animation: option-start 0.35s ease-in 0.35s forwards;');
+    scissorCard.setAttribute('style','animation: option-start 0.3s ease-in 0.7s forwards;');
+    homePage.classList.add('visually-hidden');
+    scoreContainer.classList.remove('visually-hidden');
+});
+
+homePage.addEventListener('transitionend', (e) => {
+    if(e.propertyName === "opacity") {
+        homePage.classList.add('hidden');
+    }
+},{
+    capture: true
+});
 
 themeButton.addEventListener('click', () => {
     if(html.getAttribute("data-theme") === "dark"){
