@@ -27,28 +27,29 @@
     <main class="container-fluid">
         <div class="score-container visually-hidden">
             <div class="score">
-                    <article class="option"><i class="fa-regular fa-circle-question"></i></article>
+                    <article class="option-disabled"><i class="fa-regular fa-circle-question"></i></article>
                     <h2>You</h2>
-                    <progress value="1" max="5"></progress>
-                    <small>1/5</small>
+                    <progress value="0" max="5"></progress>
+                    <small>0/5</small>
             </div>
-            <div></div>
-            <div></div>
+            <div><a href="#" id="btn-play" class="outline" role="button" disabled>Select</a></div>
             <div class="score">
-                    <article class="option"><i class="fa-regular fa-circle-question"></i></article>
+                    <article class="option-disabled"><i class="fa-regular fa-circle-question"></i></article>
                     <h2>Computer</h2>
-                    <progress value="1" max="5"></progress>
-                    <small>1/5</small>
+                    <div id="round">
+                        <progress value="0" max="5"></progress>
+                        <small>0/5</small>
+                    </div>
             </div>
         </div>
         <div class="option-container">
-            <article id="rock" class="option"><i class="fa-regular fa-hand-back-fist"></i></i></article>
-            <article id="paper" class="option"><i class="fa-regular fa-hand"></i></article>
-            <article id="scissor" class="option"><i class="fa-regular fa-hand-scissors"></i></article>
+            <article id="rock" class="option-disabled"><i class="fa-regular fa-hand-back-fist"></i></i><span class="sr-only">Rock</span></article>
+            <article id="paper" class="option-disabled"><i class="fa-regular fa-hand"></i><span class="sr-only">Paper</span></article>
+            <article id="scissor" class="option-disabled"><i class="fa-regular fa-hand-scissors"></i><span class="sr-only">Scissor</span></article>
         </div>
         <div id="home">
             <h2>Test your luck against the computer!</h2>
-            <div id="btn-container">
+        <div id="btn-container">
             <a href="#" id="btn-start" role="button">Start game</a>
         </div>
         </div>

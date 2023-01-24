@@ -9,11 +9,15 @@ const scoreContainer = document.querySelector(".score-container");
 const homePage = document.querySelector("#home");
 
 btnStart.addEventListener('click', () => {
-    rockCard.setAttribute('style','animation: option-start 0.35s ease-in forwards; ');
-    paperCard.setAttribute('style','animation: option-start 0.35s ease-in 0.35s forwards;');
-    scissorCard.setAttribute('style','animation: option-start 0.3s ease-in 0.7s forwards;');
+    rockCard.setAttribute('style','animation: option-start 1s; ');
+    paperCard.setAttribute('style','animation: option-start 1s 0.35s;');
+    scissorCard.setAttribute('style','animation: option-start 1s 0.7s;');
+    setTimeout(() => optionContainer.setAttribute('style', 'margin: 200px auto 0 auto;'), 1050);
     homePage.classList.add('visually-hidden');
     scoreContainer.classList.remove('visually-hidden');
+    rockCard.classList.replace('option-disabled', 'option');
+    paperCard.classList.replace('option-disabled', 'option');
+    scissorCard.classList.replace('option-disabled', 'option');
 });
 
 homePage.addEventListener('transitionend', (e) => {

@@ -1,11 +1,13 @@
 :root:not([data-theme=dark]), [data-theme=light] {
     --primary: rgb(229, 55, 52);
     --primary-hover: rgb(158, 43, 41);
+    --primary-focus: rgba(193, 16, 16, 0.125);
 }
 
 :root:not([data-theme=light]), [data-theme=dark] {
     --primary: rgb(229, 55, 52);
     --primary-hover: rgb(250, 60, 70);
+    --primary-focus: rgba(193, 16, 16, 0.25);
   }
 
 h1 {
@@ -55,16 +57,21 @@ padding-top: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 30px;
 }
 
 .score-container{
     position:absolute;
     display: flex;
-    justify-content: space-around;
-    width: 98%;
+    justify-content: space-between;
+    width: 97%;
     text-align: center;
-    transition: all 1.5s;
+    transition: opacity 0.7s;
+    transition-delay: 1s;
+}
+
+#btn-play {
+    margin-top: 50px;
 }
 
 .score {
@@ -87,6 +94,12 @@ padding-top: 30px;
     .option-container {
         width: 100%;
     }
+    .score-container {
+        width: 90%;
+    }
+    .score h2 {
+        font-size: medium;
+    }
 }
 
 #home h2 {
@@ -94,8 +107,28 @@ padding-top: 30px;
     margin-bottom: 20px;
 }
 
-.option {
+.option, .option-disabled{
+    z-index: 1;
     margin: 0;
+    transition: all 0.2s;
+}
+
+.option {
+    cursor: pointer;
+}
+
+.option:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    border:1px solid var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 1rem var(--primary);
+}
+
+.selected {
+    border:1px solid var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 1rem var(--primary);
 }
 
 .nav ul > li{
@@ -108,16 +141,17 @@ padding-top: 30px;
 }
 
 @keyframes option-start {
-    0% {
+    0% , 99%, 100%{
         transform: translateY(0);
     }
-    100% {
+    50%, 98% {
         transform: translateY(200px);
     }
+
 }
 
 #home {
-    transition: all 0.35s linear;
+    transition: opacity 0.35s;
 }
 
 .visually-hidden {
