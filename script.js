@@ -168,6 +168,7 @@ btnFight.addEventListener("click", () => {
 });
 
 btnContinue.addEventListener("click", () => {
+    btnFight.disabled = true;
     resetSelectedChoices();
     roundResult.textContent = "";
     round++;
