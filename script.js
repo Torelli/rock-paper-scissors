@@ -235,6 +235,10 @@ function playRound(computerChoice, playerChoice) {
 // Creating a replay function
 
 btnPlayAgain.addEventListener("click", () => {
+    btnFight.disabled = true;
+    rockCard.classList.replace('option-disabled','option');
+    paperCard.classList.replace('option-disabled','option');
+    scissorCard.classList.replace('option-disabled','option');
     btnFight.classList.remove("hidden");
     btnContinue.classList.add("hidden");
     playerCard.classList.remove("selected");
